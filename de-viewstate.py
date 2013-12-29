@@ -61,7 +61,11 @@ else:
 		segmented = segment(viewstate, 32)
 		for seg in segmented:
 			decoded += seg+';\t'+seg.decode('base64')+'\n'
-			print seg+';\t'+seg.decode('base64')+'\n'
+			s_seg = segment(seg, 2)
+			m_str = ''
+			for ss_seg in s_seg:
+				m_str += ss_seg+'  '
+			print m_str+';\t'+seg.decode('base64')+'\n'
 	if args.write:
 		f = open(args.write, 'w')
 		f.write(viewstate+'\n\n'+decoded)
