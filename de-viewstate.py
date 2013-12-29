@@ -5,10 +5,10 @@ import urllib2
 import HTMLParser 
 banner = """
 ######################################
-#				    				 #
-#	De-ViewState.py				     #
-#				     				 #
-#   -- By Henry Pitcairn		     #
+#        			     #
+#	De-ViewState.py		     #
+#	    			     #
+#   -- By Henry Pitcairn	     #
 ######################################
 """
 
