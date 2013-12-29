@@ -55,19 +55,19 @@ else:
 	print "Found viewstate: "+viewstate
 	if args.mode:
 		if args.mode[0] == 'r':
-			decoded = viewstate.decode('base64')
+			decoded = viewstate.decode('base64').replace('\n','\\n').replace('\r','\\r')
 			print "Decoded: \n"+decoded
 	else:
 		segmented = segment(viewstate, 32)
 		for seg in segmented:
-			decoded += seg+';\t'+seg.decode('base64')+'\n'
 			s_seg = segment(seg, 2)
 			m_str = ''
 			for ss_seg in s_seg:
 				m_str += ss_seg+'  '
-			print m_str+';\t'+seg.decode('base64')+'\n'
+			decoded += m_str+';\t'+seg.decode('base64').replace('\n','\\n').replace('\r','\\r')+'\n'
 	if args.write:
 		f = open(args.write, 'w')
 		f.write(viewstate+'\n\n'+decoded)
 		f.close()
+print decoded
 print "Goodbye!"
