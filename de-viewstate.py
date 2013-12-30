@@ -31,14 +31,17 @@ def get_content(page_url):
 	return data
 
 def get_viewstate(html):
-	i = html.index('id="__VIEWSTATE" value="')+24
+	i = html.find('id="__VIEWSTATE" value="')+24
 	i2 = 0
 	c_html = html[i:]
 	for j in range(0,len(c_html)):
 		if c_html[j] == '"':
 			i2 = j
 			break
-	return c_html[:i2]
+	val = c_html[:i2]
+	if i-24<0:
+		val = 'NOT_FOUND'
+	return val
 
 content = ''
 if args.url:
