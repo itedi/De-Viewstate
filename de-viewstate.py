@@ -8,7 +8,9 @@ banner = """
 #        			     #
 #	De-ViewState.py		     #
 #	    			     #
-#   -- By Henry Pitcairn	     #
+#   -- By Henry Pitcairn             #
+#   -- Moral Support by              #
+#      James Pickering               #
 ######################################
 """
 
